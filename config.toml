@@ -1,0 +1,44 @@
+baseURL = "https://dukangxu.com/"
+languageCode = "en-us"
+title = "孑孓之死"
+
+copyright = "© 2020"
+googleAnalytics = "UA-158805465-1"
+
+paginate = 10
+
+[params]
+	mainSections = ["posts"]
+	featherIconsCDN = true
+	subtitle = "Record life."
+	mode = "auto" # auto or dark
+	remark42 = true
+	favicon = "favicon.ico"
+
+
+[[menu.main]]
+name = "about"
+url = "/about"
+weight = 1
+
+[[menu.main]]
+name = "github"
+url = "https://github.com/dukangxu"
+weight = 2
+
+
+
+
+# Social media links which shows up on site header.
+# Uses feather icons for icons. You can [search icon names from here](https://feathericons.com/).
+
+[[params.social]]
+name = "rss"
+icon = "rss"
+url = "/index.xml"
+
+[taxonomies]
+   tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

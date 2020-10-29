@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+{{ partial "header.html" . }}
+
+<body>
+    <div class="container wrapper post">
+        {{ partial "head.html" . }}
+
+        <div class="post-header">
+            <h1 class="title">{{ .Title }}</h1>
+            {{ if .Params.printDate }}
+            <div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }} {{ if .Draft }}
+                <span class="draft-label">DRAFT</span> {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        <div class="markdown">
+            {{ .Content }}
+        </div>
+
+        <div class="post-tags">
+            {{ if ne .Type "page" }} {{ if gt .Params.tags 0 }}
+            <nav class="nav tags">
+                <ul class="flat">
+                    {{ range .Params.tags }}
+                    <li><a href="{{ " /tags/ " | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+            {{ end }} {{ end }}
+        </div>
+    </div>
+    <!-- copy button -->
+    <script src="{{ .Site.BaseURL }}js/copy-button.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/copy-button.css" />
+
+    <!-- remark42 comment -->
+    {{ if .Site.Params.remark42 }} {{ partial "remark42.html" . }} {{ end }}
+
+    <!-- footer -->
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

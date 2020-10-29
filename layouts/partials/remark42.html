@@ -1,0 +1,36 @@
+{{ if .Params.enableComment }}
+<div id="remark42" class="remark wrapper"></div>
+{{ end }}
+<script>
+    var theme = 'light';
+    var mode = {{.Site.Params.mode}}
+    if (mode == "dark") {
+        theme = 'dark'
+    } else {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // dark mode
+            theme = 'dark'
+        }
+    }
+
+    var remark_config = {
+        host: 'https://dukangxu.com/remark42',
+        site_id: 'dukangxu.com',
+        components: ['embed'],
+        max_shown_comments: 20,
+        theme: theme,
+    };
+
+    (function(c) {
+        for (var i = 0; i < c.length; i++) {
+            var d = document,
+                s = d.createElement('script');
+            s.src = remark_config.host + '/web/' + c[i] + '.js';
+            s.defer = true;
+            (d.head || d.body).appendChild(s);
+        }
+    })(remark_config.components || ['embed']);
+</script>
+<noscript>
+    Please enable JavaScript to view the comments powered by Remark.
+</noscript>

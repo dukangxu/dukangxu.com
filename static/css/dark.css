@@ -1,0 +1,79 @@
+body {
+	color: #ddd;
+	background-color: rgb(41, 40, 40);
+}
+
+::-moz-selection {
+    background: #666;
+    text-shadow: none
+}
+
+::selection {
+    background: #666;
+    text-shadow: none
+}
+
+hr {
+    border-color: #333;
+}
+
+blockquote {
+	border-color: #ddd;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: #ddd;
+}
+
+a,a:hover {
+	color: #ff7979;
+	text-decoration: none;
+}
+
+ul.flat span{
+    color: #ff7979;
+    text-decoration:underline;
+}
+
+.site-description a,
+.site-description a:hover {
+	color: #ff7979;
+	text-decoration: underline;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+.post-tags .tags a {
+    border: 1px solid #ff7979;
+	color: #ff7979;
+}
+
+.site-title a {
+	color: #ff7979;
+	text-decoration: none !important;
+}
+
+.header nav,
+.footer {
+	border-color: #333;
+}
+
+.highlight {
+	background-color: #333;
+}
+
+pre, textarea {
+	background-color:gray;
+}
+
+
+table th {
+	background-color: #333;
+}
+
+table th, table td {
+    padding: 10px 20px;
+    border: 1px solid #666;
+}

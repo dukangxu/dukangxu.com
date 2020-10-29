@@ -1,0 +1,25 @@
+<div class="header">
+    <div class="site-description">
+        <h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+        <nav class="nav">
+            <ul class="flat">
+                {{ $current := . }}
+                {{ range .Site.Menus.main }}
+                    {{ $topLevel := replace .URL "/" "" }}
+                    <li {{ if .HasChildren }} class="dropdown" {{ end  }}>
+                        {{ if .HasChildren }}
+                            <span>{{ .Name }}</span>
+                            <ul class="dropdown-content">
+                                {{ range .Children }}
+                                    <li style="display: block;width: 100%;"><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                {{ end }}
+                            </ul>
+                        {{ else }}
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        {{ end  }}
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</div>
